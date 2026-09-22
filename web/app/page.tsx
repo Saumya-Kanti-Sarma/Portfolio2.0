@@ -1,7 +1,7 @@
-const page = () => {
+export default function HomePage() {
   return (
-    <div>page</div>
-  )
+    <main className="p-8">
+      <h1 className="text-3xl font-semibold">Home</h1>
+    </main>
+  );
 }
-
-export default page
