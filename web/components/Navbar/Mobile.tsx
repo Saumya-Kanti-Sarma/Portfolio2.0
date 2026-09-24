@@ -42,7 +42,7 @@ export function MobileNavbar() {
             href="/"
             className="text-[1.1rem] font-bold tracking-tight text-white/90"
           >
-            GatesNotes
+            Saumya Sarma
           </Link>
 
           <button

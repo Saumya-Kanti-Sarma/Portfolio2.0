@@ -12,7 +12,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={inter.variable}>
       <body className="font-sans">
-        <div className="h-dvh w-full text-black">
+        <div className="h-dvh w-full text-black flex justify-center items-center">
           {/* shown only when viewport < 200px */}
           <div className="tiny-screen-block fixed inset-0 z-50 flex-col items-center justify-center bg-white text-white text-center px-2">
             <Image src={"/meme.png"} alt="Annoyned Saumya becasye you are too much smalling his site :)" height={100} width={100} />
@@ -21,8 +21,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             </p>
           </div>
 
-          <div className="tiny-screen-hide">
-            <Navbar />
+          <div className=" h-dvh w-full max-w-400 relative">
+            <div className="w-full absolute"><Navbar /></div>
             {children}
           </div>
         </div>
