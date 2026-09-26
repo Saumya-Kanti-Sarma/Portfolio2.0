@@ -5,6 +5,7 @@
   --black: #171717;
   --red: #EF5342;
   --gray: #323232;
+  --bg-gray: #F5F5F7;
   --font-inter: "Inter", sans-serif;
 }
 
@@ -18,7 +19,8 @@ html {
 body {
   margin: 0;
   height: 100vh;
-  background: var(--white);
+  background: var(--bg-gray);
+  /* background: yellow; */
   width: 100%;
   padding: 0 10px;
   color: var(--black);
@@ -64,4 +66,20 @@ body {
 
 .font-sans {
   font-family: var(--font-inter);
+}
+
+@theme {
+  --animate-blink: blink 1s step-end infinite;
+
+  @keyframes blink {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
+  }
 }
