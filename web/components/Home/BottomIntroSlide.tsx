@@ -1,9 +1,9 @@
 import { Highlight } from "@/UI/Highlite"
-import { HoverTerm, InlineImage } from "./components/InlineParts"
+import { HoverTerm } from "./components/InlineParts"
 
 const BottomIntroSlide = () => (
   <div className="mt-6.5 p-2.5 rounded-lg max-[760px]:text-center">
-    <h1 className="text-lg md:text-2xl  leading-snug max-w-[1050px]">
+    <h1 className="text-lg md:text-2xl  leading-snug max-w-26235">
       "I was a{" "}
       <HoverTerm
         title="Vibe coder (pre-AI)"
