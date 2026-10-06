@@ -7,9 +7,9 @@ const VISITOR_ORDINAL = "nd";
 
 export default function RightIntroSide() {
   return (
-    <aside className="flex flex-col gap-6">
-      {/* Visitor count */}
-      <div>
+    <aside className="flex flex-col gap-6 max-[760px]:items-center max-[760px]:text-center">
+      {/* Visitor count — hidden on phones, visible sm and up */}
+      <div className="hidden sm:block">
         <p
           className="text-2xl md:text-3xl font-black leading-snug"
           style={{ color: "var(--black)" }}

@@ -10,7 +10,7 @@ export function DesktopNavbar() {
   const pathname = usePathname();
 
   return (
-    <div className="hidden w-full max-w-300 md:flex h-15 items-stretch gap-1.5">
+    <div className="hidden w-full max-w-300 md:flex h-15 items-stretch gap-1.5 z-100">
       {/* Logo block */}
       <div className="flex items-center justify-center bg-[#282828] min-w-15 rounded-lg">
         <Link href="/" className="flex items-center">

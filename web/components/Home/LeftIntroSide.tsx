@@ -3,7 +3,7 @@ import Greetings from "./components/Greetings"
 export const LeftIntroSide = () => {
   return (
     <aside className="flex flex-col gap-3">
-      <Greetings />
+      <span className="max-sm:hidden"><Greetings /></span>
       <p
         className="text-xl md:text-4xl font-semibold leading-snug hidden md:block"
         style={{ color: "var(--black)" }}

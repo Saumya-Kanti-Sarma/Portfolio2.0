@@ -12,7 +12,7 @@ export function MobileNavbar() {
   const pathname = usePathname();
 
   return (
-    <div className="w-full flex flex-col gap-1.5 md:hidden">
+    <div className="w-full flex flex-col gap-1.5 md:hidden z-100">
       {/* Mobile bar */}
       <div className="flex w-full h-15 items-center gap-1.5">
         {/* Logo block */}
