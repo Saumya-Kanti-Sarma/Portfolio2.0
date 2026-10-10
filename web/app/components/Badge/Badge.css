@@ -1,0 +1,27 @@
+.name-badge {
+  position: relative;
+  isolation: isolate;
+  display: inline-block;
+  padding: 12px 28px 14px 20px;
+  transform: rotate(-1deg);
+  background: var(--gray);
+  color: #fff;
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.name-badge::before {
+  position: absolute;
+  z-index: -1;
+  inset: -5px 4px -1px 4px;
+  transform: rotate(-5deg);
+  background: var(--red);
+  content: "";
+}
+
+.name-badge>span {
+  display: inline-block;
+  transform: rotate(-5deg);
+}
