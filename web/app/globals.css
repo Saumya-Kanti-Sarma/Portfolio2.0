@@ -19,6 +19,7 @@ html {
 body {
   margin: 0;
   height: 100vh;
+  overflow-x: hidden;
   background: var(--bg-gray);
   /* background: yellow; */
   width: 100%;
@@ -50,6 +51,7 @@ body {
 }
 
 @keyframes social-link-jump {
+
   0%,
   15%,
   100% {
