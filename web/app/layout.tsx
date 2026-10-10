@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -9,11 +10,19 @@ const inter = Inter({
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="font-sans">
-        <div className="h-dvh w-full text-black flex justify-center items-center ">
+      <head>
+        <link href="/s-vector.svg" />
+        <title> Saumya Kanti Sarma&apos;s Portfolio Website</title>
+
+      </head>
+      <ThemeProvider
+        attribute="data-theme"
+        enableSystem={false}
+        defaultTheme="light">
+        <body className="font-sans">
           {children}
-        </div>
-      </body>
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

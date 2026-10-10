@@ -1,12 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --white: #ffffff;
-  --black: #171717;
+  --primary-bg: #ffffff;
+  --secondary-bg: #F5F5F7;
+  --text: #171717;
   --red: #EF5342;
   --gray: #323232;
-  --bg-gray: #F5F5F7;
   --font-inter: "Inter", sans-serif;
+}
+
+[data-theme='dark'] {
+  --primary-bg: #000000;
+  --secondary-bg: #141414;
+  --text: #fffdfd;
+
 }
 
 html {
@@ -20,94 +27,21 @@ body {
   margin: 0;
   height: 100vh;
   overflow-x: hidden;
-  background: var(--bg-gray);
+  background: var(--secondary-bg);
   /* background: yellow; */
   width: 100%;
   padding: 0 10px;
-  color: var(--black);
+  color: var(--text);
   font-family: var(--font-inter);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 300ms ease, color 300ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
 }
 
 * {
   box-sizing: border-box;
-}
-
-@keyframes dropdown-in {
-  from {
-    opacity: 0;
-    transform: translateY(-6px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.dropdown-animate {
-  animation: dropdown-in 0.18s ease-out forwards;
-}
-
-@keyframes social-link-jump {
-
-  0%,
-  15%,
-  100% {
-    transform: translateY(0);
-  }
-
-  7.5% {
-    transform: translateY(-8px);
-  }
-}
-
-@media (max-width: 760px) and (prefers-reduced-motion: no-preference) {
-  .home-social-link {
-    animation: social-link-jump 2.4s ease-in-out infinite;
-  }
-
-  .home-social-link:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-
-  .home-social-link:nth-child(3) {
-    animation-delay: 0.4s;
-  }
-}
-
-/* Tiny screen blocker */
-.tiny-screen-block {
-  display: none;
-}
-
-@media (max-width: 200px) {
-  .tiny-screen-block {
-    display: flex;
-  }
-
-  .tiny-screen-hide {
-    display: none !important;
-  }
-}
-
-.font-sans {
-  font-family: var(--font-inter);
-}
-
-@theme {
-  --animate-blink: blink 1s step-end infinite;
-
-  @keyframes blink {
-
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0;
-    }
-  }
 }
