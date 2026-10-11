@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Badge from "./components/Badge/Badge";
 import Link from "next/link";
+import ProjectsGrid from "./components/ProjectsGrid";
+import "./page.css";
 
 const blogs = [
   {
@@ -20,6 +22,55 @@ const blogs = [
   },
 ];
 
+const projects = [
+  {
+    title: "OpenNarrator | Offline 1st TTS software ",
+    picture: "/projects/opennarrator.png",
+    url: "https://opennarrator.com",
+    description:
+      "An offline-first desktop text-to-speech app for turning PDFs and other reading into an audiobook-like listening experience. OpenNarrator uses Kokoro TTS for voice generation and Tauri to deliver a lightweight desktop app.",
+    technologies: ["Tauri", "Kokoro TTS", "Text to speech"],
+  },
+  {
+    title: "Any Dark | Browser extension that gives darkmode to any site",
+    picture: "/projects/anydark.png",
+    url: "https://anydark.pages.dev",
+    description:
+      "A browser extension that makes websites easier to browse in the dark. It applies dark-mode styling by adjusting page colors while preserving the original appearance of images and other media.",
+    technologies: ["JavaScript", "Browser extension", "Dark mode"],
+  },
+  {
+    title: "Code Plexx | My personal blogging website",
+    picture: "/projects/codeplexx.png",
+    url: "https://codeplexx.vercel.app/",
+    description:
+      "A full-stack technology blogging platform inspired by TechCrunch. Code Plexx brings together a Next.js and TypeScript frontend with MongoDB and Supabase.",
+    technologies: ["Next.js", "TypeScript", "MongoDB", "Supabase"],
+  },
+  {
+    title: "Int2Words | Python package to convert number to words",
+    picture: "/projects/int2word.png",
+    url: "https://pypi.org/project/int2word/",
+    description:
+      "A lightweight Python package that converts integer values into readable English words—for example, turning 123 into “one hundred and twenty-three.”",
+    technologies: ["Python", "PyPI"],
+  },
+  {
+    title: "Next CLI Toolkit | SDK for NextJS developers",
+    picture: "/projects/nexxt-cli-toolkit.png",
+    url: "https://www.npmjs.com/package/next-cli-toolkit",
+    description:
+      "A small command-line tool for generating Next.js routes and components, including .tsx, .jsx, and .css files, from a single command.",
+    technologies: ["Next.js", "Node.js", "CLI", "npm"],
+  },
+  {
+    title: "Meta Menus | Free digital menu for restaurants  ",
+    picture: "/projects/meta-menus.png",
+    description:
+      "A full-stack digital menu experience for restaurants. Guests can browse dishes, search or filter the menu, and view full- and half-portion prices.",
+    technologies: ["React", "Next.js", "MongoDB", "Supabase"],
+  },
+]
 
 export default function HomePage() {
   return (
@@ -127,8 +178,52 @@ export default function HomePage() {
               </article>
             ))}
           </div>
+          <div className="flex justify-center">
+            <Link href={"#"} className="w-full flex justify-center">
+              <button className="bg-(--red) p-5 rounded-xl text-white text-2xl w-full mt-5 max-w-150 cursor-pointer">
+                Read My Articles </button>
+            </Link>
+          </div>
         </section>
+        {/* Projects */}
+        <section className="w-full">
+          <br />
+          <h1 className="text-(--red) font-black">PROJECTS AND SIDE HUSTLES</h1>
+          <h3>
+            A few things I&apos;ve built, from developer tools to products for
+            everyday use.
+          </h3>
+          <Image
+            className="projects-banner"
+            src="/portfolio/projects-banner.jpg"
+            alt="Saumya's software projects"
+            width={1400}
+            height={200}
+          />
+          <p className="text-4xl text-(--light-gray) font-medium">
+            Most of my projects are solutions of the problems that I&apos;ve faced/encountered and wanted to give a better way to approach the problem. For example while building {" "}
+            <Link
+              href={"https://meta-menus.pages.dev"}
+              className="text-[#3d30f59f]"
+            >(Meta menus)</Link>
+            {" "}
+            <span className="inline-image-frame">
+              <Image
+                src="/projects/meta-menus.png"
+                width={100}
+                height={60}
+                alt="meta menu"
+              />
+            </span>
+            I went to a restaurant where I saw a qr code placed on table and upon scanning it, a canva template popped up...  <Link href={"#"}
+              className="text-xl text-[#3d30f59f]"
+            >read the full article</Link>
+          </p>
+          <ProjectsGrid projects={projects} />
+        </section>
+
       </div>
+
     </main>
   );
 }
